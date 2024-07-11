@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <title>Video</title>
+    <style>
+        body {
+            color: white;
+            margin: 0px;
+            padding: 0px;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            height: 100vh;
+        }
+
+        header.feature-box.top {
+            background-color: black;
+            height: 64px;
+            margin: 0px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header.feature-box.second {
+            height: 50px;
+            text-align: center;
+            margin-top: -25px;
+        }
+
+        .features {
+            background-color: black;
+            width: 900px;
+            height: 700px;
+            border-radius: 35px;
+            object-fit: contain;
+            margin: 20px;
+        }
+
+section.col-sm {
+    background-color: black;
+    width: 1000px;
+    height: 650px;
+    border-radius: 35px;
+    object-fit: contain;
+    margin: 40px;
+    margin-left: 255px; /* Move it 100px to the right */
+}
+ak
+{ margin-left: 255px;
+
+}
+
+
+        img {
+            width: 900px;
+            height: 600px;
+            border-radius: 35px;
+            object-fit: contain;
+            margin: 40px;
+        }
+
+        .new {
+            color: black;
+            margin: 0px;
+            padding: 10px;
+            align-content: center;
+            margin: 0px;
+            margin-top: 20px; /* Added margin-top to move it down */
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<header class="feature-box top">
+       <a href="/" style="position: absolute; top: 20px; left: 20px;">Back</a>
+
+    <h1><strong>Privacy Preservation of Tracked and Classified Maritime Vessel Data using SHA-256</strong></h1>
+</header>
+<header class="feature-box second">
+    <section>
+        <div class="new">
+            <form method='POST' enctype="multipart/form-data">
+                {{ form.hidden_tag() }}
+                <div style="text-align: center;">
+                    {{ form.file(class_="custom-file-input") }}
+                    <button type="submit" name="favorite" value="x" class="btnCustom">
+                        Submit
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+</header>
+ a={{session.get('video_path')}}
+<div style="text-align: center; color: black;">
+    <p style="color: black; text-align: right; font-weight: bold; margin-right: 400px; font-size: 20px; margin-top: 10px;">User-selected video path: {{ session.get('video_path') }}</p>
+</div>
+<section class="col-sm" style="background-color: transparent;">
+
+
+    <img src="{{ url_for('video') }}" alt="Upload video" style="float: right; margin-top: -70px;">
+</section>
+
+<!-- Add a new HTML element to display the file path -->
+
+
+</body>
+</html>
